@@ -1,0 +1,29 @@
+ol {
+    margin-left: 2em;
+}
+
+li {
+    margin: 20px;   
+    padding: 1em;
+    background-color:  white;
+    color: black;
+    border-radius: 2px;
+}
+
+
+.album-container {
+    display: flex;
+    flex-direction: row wrap;
+    /* justify-content: center; */
+}
+
+.album {
+    display: flex;
+    flex-flow: row wrap;   
+    justify-content: flex-start;
+    margin:  20px;
+}
+
+.info {
+    padding: 1em;
+}

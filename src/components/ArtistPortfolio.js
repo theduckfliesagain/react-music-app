@@ -1,4 +1,5 @@
 import React from 'react';
+import './ArtistPortfolio.css'
 
 const ArtistPortfolio = () => {
     const topSongs = [
@@ -14,26 +15,33 @@ const ArtistPortfolio = () => {
 
 
     return (
-        <section >
-            <div>
+        <section className="artist-portfolio">
+            <section className="top-songs">
                 <h2>Top songs</h2>
-                <ol>
-                    {topSongs.map((song, index) => <li key={index}>{song.name} | {song.plays}</li>)}
-                </ol>
-            </div>
+                <div className="songs">
+                    <ol>
+                        {topSongs.map((song, index) => <li key={index}>{song.name} | {song.plays}</li>)}
+                    </ol>
+                </div>
+            </section>
 
-            <div>
+            <section className="albums">
                 <h2>Albums</h2>
+                <div className="album-container">
+                    {
+                        albums.map((album, index) => (
+                            <div key={album.title} className="album">
+                                <img src={album.image} alt={album.title}></img>
+                                <div class="info">
+                                    <h3>{album.title}</h3>
+                                    <h4>{album.year}</h4>
+                                </div>
 
-                {albums.map((album, index) => (
-                    <div key={album.title}>
-                        <img src={album.image} alt={album.title}></img> 
-                        <h3>{album.name}</h3>
-                        <h4>{album.year}</h4>
-                    </div>)
-                )}
-
-            </div>
+                            </div>)
+                        )
+                    }
+                </div>
+            </section>
         </section>
 
     )

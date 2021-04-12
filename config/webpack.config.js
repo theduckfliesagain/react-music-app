@@ -5,7 +5,9 @@ const ROOT_DIRECTORY = path.join(__dirname, '../');
 const PUBLIC_DIRECTORY = path.join(ROOT_DIRECTORY, 'public');
 
 const config = {
-  entry: [path.resolve(ROOT_DIRECTORY, 'src/index.js')], 
+  entry: [
+    path.resolve(ROOT_DIRECTORY, 'src/index.js')
+  ],
   output: {
     path: path.resolve(ROOT_DIRECTORY, 'build'),
     filename: 'bundle.js',
