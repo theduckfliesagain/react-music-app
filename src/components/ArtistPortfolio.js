@@ -1,5 +1,8 @@
 import React from 'react';
+import FavButton from './FavButton';
+
 import './ArtistPortfolio.css'
+
 
 const ArtistPortfolio = () => {
     const topSongs = [
@@ -9,8 +12,9 @@ const ArtistPortfolio = () => {
     ]
 
     const albums = [
-        { title: "Cocoa Sugar", year: 2018, image: "https://media.pitchfork.com/photos/5a5fcb793bca4e30ca1e0810/1:1/w_320/young%20fathers%20_%20cocoa%20sugar_%20album%20cover.jpg" },
-        { title: "White Men Are Black Men Too", year: 2015, image: "https://media.pitchfork.com/photos/5929ad4d9d034d5c69bf4348/1:1/w_320/c44f4eaf.jpg" }
+        { title: "Cocoa Sugar", year: 2018, image: "https://f4.bcbits.com/img/a1022040919_10.jpg" },
+        { title: "White Men Are Black Men Too", year: 2015, image: "https://f4.bcbits.com/img/a3109957338_10.jpg" },
+        { title: "DEAD", year: 2014, image: "https://f4.bcbits.com/img/a0309814645_10.jpg" }
     ]
 
 
@@ -20,7 +24,12 @@ const ArtistPortfolio = () => {
                 <h2>Top songs</h2>
                 <div className="songs">
                     <ol>
-                        {topSongs.map((song, index) => <li key={index}>{song.name} | {song.plays}</li>)}
+                        {topSongs.map((song, index) =>
+                            <li key={index}>
+                                <span className="song-title">{song.name}</span>
+                                <span className="song-plays">{song.plays}</span>
+                                <FavButton />
+                            </li>)}
                     </ol>
                 </div>
             </section>
@@ -32,9 +41,9 @@ const ArtistPortfolio = () => {
                         albums.map((album, index) => (
                             <div key={album.title} className="album">
                                 <img src={album.image} alt={album.title}></img>
-                                <div class="info">
-                                    <h3>{album.title}</h3>
+                                <div className="info">
                                     <h4>{album.year}</h4>
+                                    <h3>{album.title}</h3>
                                 </div>
 
                             </div>)
