@@ -1,5 +1,5 @@
 import React from 'react';
-import './ArtistProfile.css'
+import './styles.css'
 
 const ArtistProfile = () => {
 

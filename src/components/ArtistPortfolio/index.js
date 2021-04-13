@@ -1,7 +1,7 @@
 import React from 'react';
-import FavButton from './FavButton';
+import FavButton from '../FavButton';
 
-import './ArtistPortfolio.css'
+import './styles.css'
 
 
 const ArtistPortfolio = () => {
@@ -16,7 +16,6 @@ const ArtistPortfolio = () => {
         { title: "White Men Are Black Men Too", year: 2015, image: "https://f4.bcbits.com/img/a3109957338_10.jpg" },
         { title: "DEAD", year: 2014, image: "https://f4.bcbits.com/img/a0309814645_10.jpg" }
     ]
-
 
     return (
         <section className="artist-portfolio">
@@ -52,7 +51,6 @@ const ArtistPortfolio = () => {
                 </div>
             </section>
         </section>
-
     )
 }
 
