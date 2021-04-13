@@ -1,5 +1,6 @@
 import React from 'react';
 import FavButton from '../FavButton';
+import Lyrics from '../Lyrics';
 
 import './styles.css'
 
@@ -27,6 +28,7 @@ const ArtistPortfolio = () => {
                             <li key={index}>
                                 <span className="song-title">{song.name}</span>
                                 <span className="song-plays">{song.plays}</span>
+                                <Lyrics />
                                 <FavButton />
                             </li>)}
                     </ol>
