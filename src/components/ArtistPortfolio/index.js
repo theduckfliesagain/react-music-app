@@ -18,9 +18,7 @@ const ArtistPortfolio = () => {
         { title: "DEAD", year: 2014, image: "https://f4.bcbits.com/img/a0309814645_10.jpg" }
     ]
 
-    
 
- 
     return (
         <section className="artist-portfolio">
             <section className="top-songs">

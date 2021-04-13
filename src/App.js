@@ -1,6 +1,7 @@
 import React from 'react'
-import ArtistProfile from "./components/ArtistProfile";
-import ArtistPortfolio from "./components/ArtistPortfolio";
+import {ArtistPortfolio, ArtistProfile} from "./components";
+import {Reviews} from "./pages";
+
 
 import './App.css'
 
@@ -9,6 +10,7 @@ function App() {
         <main>
             <ArtistProfile />
             <ArtistPortfolio />
+            <Reviews />
         </main>
     );
 }
