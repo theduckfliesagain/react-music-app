@@ -11,7 +11,7 @@ const FavButton = () => {
     }
 
     return (
-        <span className="fav-btn" role="switch" onClick={handleFav}>
+        <span className="fav-btn btn" role="switch" onClick={handleFav}>
             <i className={`${faved ? 'fas': 'far'} fa-heart`}></i>
         </span>
     )
