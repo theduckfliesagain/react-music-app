@@ -1,6 +1,6 @@
 import React from 'react';
-import FavButton from '../FavButton';
-import Lyrics from '../Lyrics';
+// import FavButton from '../FavButton';
+import {LyricsButton, FavButton} from '..';
 
 import './styles.css'
 
@@ -18,6 +18,9 @@ const ArtistPortfolio = () => {
         { title: "DEAD", year: 2014, image: "https://f4.bcbits.com/img/a0309814645_10.jpg" }
     ]
 
+    
+
+ 
     return (
         <section className="artist-portfolio">
             <section className="top-songs">
@@ -28,7 +31,7 @@ const ArtistPortfolio = () => {
                             <li key={index}>
                                 <span className="song-title">{song.name}</span>
                                 <span className="song-plays">{song.plays}</span>
-                                <Lyrics />
+                                <LyricsButton songName={song.name} />
                                 <FavButton />
                             </li>)}
                     </ol>

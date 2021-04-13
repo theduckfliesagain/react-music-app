@@ -1,0 +1,22 @@
+.lyrics-container {
+    transition: all 0.2s;
+    /* margin: 10vh auto; */
+    position: absolute;
+    top: 10vh;
+    overflow-y: scroll;
+    max-height: 80vh;
+    padding: 10em;
+    border-radius: 20px;
+    background-color: rgba(10, 10, 10, 0.918);
+    color: white;
+    backdrop-filter: blur(20px);
+}
+
+.lyrics>pre {
+    font-family: inherit;
+    line-height: 1em;
+}
+
+.close-btn {
+    float: right;
+}
