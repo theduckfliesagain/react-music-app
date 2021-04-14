@@ -14,7 +14,7 @@ function App() {
             <Layout.Navbar />
             <main>
                 <Switch>
-                    <Route exact path="/" component={ArtistProfile} />
+                    <Route exact path="/" component={Pages.Profile} />
                     <Route path="/albums" component={ArtistPortfolio} />
                     <Route path="/reviews" component={Pages.Reviews} />
                     <Route component={Pages.NotFound} />
