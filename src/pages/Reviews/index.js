@@ -13,11 +13,11 @@ const Reviews = () => {
 
     return (
         <section className="reviews">
-            <h2>Under construction</h2>
-            {/* <ReviewForm handleAddReview={handleAddReview} /> */}
+            <ReviewForm handleAddReview={handleAddReview} /> 
 
             <h2>Reviews</h2>
-            {reviews.map((review, id) => <UserReview key={id} review={review}/>)}
+            {/*shallow copy array and reverse to order by date*/}
+            {reviews.slice(0).reverse().map((review, id) => <UserReview key={id} review={review}/>)}
         </section>
     )
 }
