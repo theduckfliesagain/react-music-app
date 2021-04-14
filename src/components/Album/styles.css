@@ -1,10 +1,10 @@
 
 .album {
-    /* display: inline-block; */
-    height: auto;
-    width: auto;
+    /* height: auto;
+    width: auto; */
     /* float: left; */
     max-width: 300px;
+    min-width: 200px;
     margin: 25px;
 }
  .album>img {
