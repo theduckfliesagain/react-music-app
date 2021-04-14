@@ -1,8 +1,4 @@
 
-ol {
-    margin-left: 2em;
-}
-
 li {
     display: flex;
     align-items: center;
@@ -35,28 +31,3 @@ li {
 }
 
 
-
-.album-container {
-    /* max-width: 100%; */
-    /* display: flex; */
-    /* flex-direction: row wrap; */
-    /* justify-content: center; */
-}
-
-.album {
-    /* display: flex;
-    flex-flow: row wrap;   
-    justify-content: flex-start;
-    margin:  20px; */
-    
-}
-
-.album>img {
-    max-width: 400px;
-    /* width: auto; */
-  
-}
-
-.info {
-    padding: 1em;
-}

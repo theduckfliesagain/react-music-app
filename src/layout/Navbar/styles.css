@@ -4,7 +4,17 @@ nav {
     justify-content: space-evenly;
 }
 
-a {
+nav>button {
+    width: 100px;
+    border: none;
+    outline: none;
+    background-color: none;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+
+nav>a {
     transition: all 0.1s;
     width: 100%;
     text-align: center;
@@ -15,7 +25,7 @@ a {
     font-size: 2em;
 }
 
-a:hover {
+nav>a:hover {
     background-color: rgb(187, 187, 187);
     color: black;
 }
