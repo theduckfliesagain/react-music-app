@@ -1,0 +1,27 @@
+nav {
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+a {
+    transition: all 0.1s;
+    width: 100%;
+    text-align: center;
+    padding: 30px;
+    text-decoration: none;
+    color: white;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2em;
+}
+
+a:hover {
+    background-color: rgb(187, 187, 187);
+    color: black;
+}
+
+.current {
+    background-color: white;
+    color: black;
+    font-weight: bolder;
+}
