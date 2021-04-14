@@ -7,7 +7,7 @@ const BackButton = () => {
     return (
         <button
             aria-label="back"
-            className="fas fa-chevron-left back-btn btn"
+            className="fas fa-chevron-left back-btn"
             onClick={history.goBack}>
 
         </button>
