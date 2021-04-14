@@ -1,0 +1,32 @@
+form {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+}
+
+form>label {
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+form>input, form>textarea {
+    padding: 1em;
+    border-radius: 5px;
+    outline: none;
+    border:  none;
+}
+
+
+#review-name-input {
+    max-width: 400px;
+}
+
+#review-text-input {
+    min-height: 100px;
+}
+
+#review-submit-btn {
+    margin: 1em 0;
+    max-width: 400px;
+}
+
