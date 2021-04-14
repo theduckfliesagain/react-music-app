@@ -15,7 +15,8 @@ const config = {
   },
   mode: 'development', 
   resolve: {
-    modules: [path.resolve('node_modules'), 'node_modules'], 
+    // modules: [path.resolve('node_modules'), 'node_modules'], 
+    modules: ['node_modules'], 
   },
   performance: {
     hints: false,
