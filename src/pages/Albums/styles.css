@@ -1,10 +1,10 @@
 
 .album-container {
-    width: 100%;
+    /* width: 100%; */
     /* max-width: 100%; */
-    overflow: auto;
+    /* overflow: auto; */
     display: flex; 
-    flex-direction: row wrap;
-    justify-content: space-between;
+    flex-flow: row wrap;
+    justify-content: space-around;
     align-items: flex-start;
 }
