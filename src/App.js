@@ -15,7 +15,7 @@ function App() {
             <main>
                 <Switch>
                     <Route exact path="/" component={Pages.Profile} />
-                    <Route path="/albums" component={ArtistPortfolio} />
+                    <Route path="/albums" component={Pages.Albums} />
                     <Route path="/reviews" component={Pages.Reviews} />
                     <Route component={Pages.NotFound} />
                 </Switch>
