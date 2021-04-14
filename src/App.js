@@ -1,17 +1,26 @@
 import React from 'react'
-import {ArtistPortfolio, ArtistProfile} from "./components";
-import {Reviews} from "./pages";
+import { Switch, Route } from "react-router-dom";
+
+import { ArtistPortfolio, ArtistProfile } from "./components";
+import * as Layout from "./layout";
+import * as Pages from "./pages";
 
 
 import './App.css'
 
 function App() {
     return (
-        <main>
-            <ArtistProfile />
-            <ArtistPortfolio />
-            <Reviews />
-        </main>
+        <>
+            <Layout.Navbar />
+            <main>
+                <Switch>
+                    <Route exact path="/" component={Pages.Profile} />
+                    <Route path="/albums" component={Pages.Albums} />
+                    <Route path="/reviews" component={Pages.Reviews} />
+                    <Route component={Pages.NotFound} />
+                </Switch>
+            </main>
+        </>
     );
 }
 

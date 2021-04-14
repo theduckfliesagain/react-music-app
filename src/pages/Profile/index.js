@@ -1,10 +1,9 @@
 import React from 'react';
-import './styles.css'
+import { FeaturedSongs } from "../../components";
 
-const ArtistProfile = () => {
+const Profile = () => {
 
     const genres = ["Low-fi", "Indie", "Art-Pop", "Rap"]
-
 
     return (
         <section className="artist-profile">
@@ -12,14 +11,14 @@ const ArtistProfile = () => {
             <h3> 
                 {genres.map(genre => (<span key={genre}>{genre} | </span> ))}
             </h3>
-
             <p>
                 Young Fathers is a Scottish band based in Edinburgh, Scotland. 
                 In 2014, they won the Mercury Prize for their album Dead.
             </p>
-        </section>
-       
+
+            <FeaturedSongs />          
+        </section>    
     )
 }
 
-export default ArtistProfile;
+export default Profile;

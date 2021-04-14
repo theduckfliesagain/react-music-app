@@ -24,8 +24,8 @@ const Reviews = () => {
 
     return (
         <section className="reviews">
-            <h2>Add a Review</h2>
-            <ReviewForm handleAddReview={handleAddReview} />
+            <h2>Under construction</h2>
+            {/* <ReviewForm handleAddReview={handleAddReview} /> */}
 
             <h2>Reviews</h2>
             {/* {reviews.map((review, id) => <UserReview key={id} review={review}/>)} */}

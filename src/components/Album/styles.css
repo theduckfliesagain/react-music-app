@@ -1,0 +1,17 @@
+
+.album {
+    /* height: auto;
+    width: auto; */
+    /* float: left; */
+    max-width: 300px;
+    min-width: 200px;
+    margin: 25px;
+}
+ .album>img {
+    max-width:100%;
+    max-height:100%;
+ }
+
+.info {
+    padding: 1em;
+}
