@@ -3,32 +3,21 @@ import { ReviewForm, UserReview } from "../../components";
 
 const Reviews = () => {
     const [reviews, setReviews] = useState([
-        {id: 0, text: "Nice songs."},
-        {id: 1, text: "Another comment"}
+        {time: Date.now(), name:"YoloBaggins", text: "Nice songs."},
     ]);
 
-    useEffect(() => {
-        console.log(reviews);
-    }, []);
-
-    const handleAddReview = async (review) => {
-        // const newReview = {
-        //     id: reviews.length + 1,
-        //     text: review.text
-        // }
-        
-        // const newReviews = await reviews.concat({newReview});
-        
-        await setReviews(prev => prev.push({id:2, text: "test"}));
+    const handleAddReview = (review) => {
+        // update the reviews with new review
+        setReviews(prev => [...prev, review]);
     }
 
     return (
         <section className="reviews">
-            <h2>Under construction</h2>
-            {/* <ReviewForm handleAddReview={handleAddReview} /> */}
+            <ReviewForm handleAddReview={handleAddReview} /> 
 
             <h2>Reviews</h2>
-            {/* {reviews.map((review, id) => <UserReview key={id} review={review}/>)} */}
+            {/*shallow copy array and reverse to order by date*/}
+            {reviews.slice(0).reverse().map((review, id) => <UserReview key={id} review={review}/>)}
         </section>
     )
 }
