@@ -1,5 +1,5 @@
 export {default as ArtistPortfolio} from './ArtistPortfolio'
-export {default as ArtistProfile} from './ArtistProfile'
+export {default as FeaturedSongs} from './FeaturedSongs'
 export {default as FavButton} from './FavButton'
 export {default as ReviewForm} from './ReviewForm'
 export {default as UserReview} from './UserReview'
