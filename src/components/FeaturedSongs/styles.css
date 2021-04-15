@@ -2,11 +2,10 @@
 li {
     display: flex;
     align-items: center;
-    /* margin: 20px;    */
     margin-bottom: 1em;
     padding: 1em;
-    background-color:  white;
-    color: black;
+    background-color:  rgb(29, 29, 29);
+    color: white;
     border-radius: 2px;
 }
 .song-title {
