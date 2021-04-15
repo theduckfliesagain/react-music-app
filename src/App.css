@@ -29,8 +29,11 @@ section {
 
 h1, h2, h3, h4 {
     font-family: 'Bebas Neue', sans-serif;
+}
+
+h1 {
     font-size: 5em;
-    margin-bottom: 0.2em;
+    margin: 0;
 }
 
 h2 {

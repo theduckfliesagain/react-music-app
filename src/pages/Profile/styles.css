@@ -1,0 +1,8 @@
+.genres>span {
+    font-weight: lighter;
+    margin: 1em 5px;
+}
+
+.artist-profile>p {
+    margin: 1em 0;
+}

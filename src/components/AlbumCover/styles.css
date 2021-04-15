@@ -1,0 +1,17 @@
+
+.album-cover {
+    display: flex;
+    justify-content: flex-start;
+    /* max-width: 300px; */
+    min-width: 200px;
+    margin: 25px;
+}
+ .album-cover>img {
+    max-width:300px;
+    max-height:300px;
+    cursor: pointer;
+ }
+
+.info {
+    padding: 10px 20px;
+}
