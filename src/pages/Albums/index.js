@@ -1,23 +1,56 @@
-import React from 'react';
-import { Album } from '../../components';
+import React, { useEffect, useState } from 'react';
+import { Link, Route, Switch, useRouteMatch, useHistory, useParams } from 'react-router-dom';
+import { AlbumCover, AlbumSongs } from '../../components';
+
+import albumsData from '../../data';
 
 import "./styles.css";
 
 const Albums = () => {
-    const albums = [
-        { title: "Cocoa Sugar", year: 2018, image: "https://f4.bcbits.com/img/a1022040919_10.jpg" },
-        { title: "White Men Are Black Men Too", year: 2015, image: "https://f4.bcbits.com/img/a3109957338_10.jpg" },
-        { title: "DEAD", year: 2014, image: "https://f4.bcbits.com/img/a0309814645_10.jpg" }
-    ]
 
+    const [albums, setAlbums] = useState(albumsData);
+
+    // setAlbums(albumsData);
+    const history = useHistory();
+    const params = useParams();
+
+    // useEffect(() => {
+    //     const getAlbum = async () => {
+    //         try {
+    //             console.log(albums.find(a => a.id === 0) );
+    //         } catch (error) {
+    //             console.log(error)
+    //         }
+    //     }
+
+    //     getAlbum();
+    // }, [params]);
+
+
+    const handleSelect = (id) => {
+        history.push(`albums/${id}`)
+    }
+
+    const albumsList = albums.map((album) => (
+        // <Link to={`${match}/`}>
+        <AlbumCover key={album.id} album={album} handleSelect={handleSelect} />
+        // </Link>  
+    ))
 
     return (
         <section className="album-container">
-                {
-                    albums.map((album, idx) => (
-                        <Album key={idx} album={album} />
-                    ))
-                }
+            {
+                <Switch>
+                    <Route exact path={"/albums"}>{albumsList}</Route>
+                    <Route path={"/albums/:id"} render={({ match }) => (
+                        <>
+                            <AlbumCover album={albums[match.params.id]} />
+                            <AlbumSongs album={albums[match.params.id]} />
+                        </>
+                    )} />
+                </Switch>
+
+            }
         </section>
     )
 }
