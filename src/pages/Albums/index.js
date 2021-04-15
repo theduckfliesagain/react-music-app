@@ -10,21 +10,8 @@ const Albums = () => {
 
     const [albums, setAlbums] = useState(albumsData);
 
-    // setAlbums(albumsData);
     const history = useHistory();
-    const params = useParams();
 
-    // useEffect(() => {
-    //     const getAlbum = async () => {
-    //         try {
-    //             console.log(albums.find(a => a.id === 0) );
-    //         } catch (error) {
-    //             console.log(error)
-    //         }
-    //     }
-
-    //     getAlbum();
-    // }, [params]);
 
 
     const handleSelect = (id) => {
@@ -32,24 +19,29 @@ const Albums = () => {
     }
 
     const albumsList = albums.map((album) => (
-        // <Link to={`${match}/`}>
         <AlbumCover key={album.id} album={album} handleSelect={handleSelect} />
-        // </Link>  
     ))
 
     return (
-        <section className="album-container">
+        <section className="album-page">
             {
                 <Switch>
-                    <Route exact path={"/albums"}>{albumsList}</Route>
-                    <Route path={"/albums/:id"} render={({ match }) => (
-                        <>
-                            <AlbumCover album={albums[match.params.id]} />
-                            <AlbumSongs album={albums[match.params.id]} />
-                        </>
-                    )} />
+                    <Route
+                        exact path={"/albums"}
+                        render={() => (
+                            <div className="album-container">
+                                {albumsList}
+                            </div>
+                        )} />
+                    <Route
+                        path={"/albums/:id"}
+                        render={({ match }) => (
+                            <div className="album-page">
+                                <AlbumCover album={albums[match.params.id]} handleSelect={() => { }} />
+                                <AlbumSongs album={albums[match.params.id]} />
+                            </div>
+                        )} />
                 </Switch>
-
             }
         </section>
     )

@@ -5,6 +5,21 @@
     /* overflow: auto; */
     display: flex; 
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: flex-start;
+}
+
+.album-container>*{
+    flex-flow: column;
+    max-width: 300px;
+}
+
+.album-page {
+    display: block; 
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.album-page>.album-cover>.info{
+    font-size: 2em;
 }
