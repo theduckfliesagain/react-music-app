@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { ReviewForm, UserReview } from "../../components";
 
 const Reviews = () => {
@@ -13,6 +13,7 @@ const Reviews = () => {
 
     return (
         <section className="reviews">
+            <h2>Add a review</h2>
             <ReviewForm handleAddReview={handleAddReview} /> 
 
             <h2>Reviews</h2>
