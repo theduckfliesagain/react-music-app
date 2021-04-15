@@ -1,7 +1,6 @@
 import React from 'react'
 import { Switch, Route } from "react-router-dom";
 
-import { ArtistPortfolio, ArtistProfile } from "./components";
 import * as Layout from "./layout";
 import * as Pages from "./pages";
 
