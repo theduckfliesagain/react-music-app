@@ -1,24 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ReviewForm, UserReview } from "../../components";
 
-const Reviews = () => {
-    const [reviews, setReviews] = useState([
-        {time: Date.now(), name:"YoloBaggins", text: "Nice songs."},
-    ]);
+import { useSelector, useDispatch } from 'react-redux';
+import { addReview } from './reviewActions';
 
-    const handleAddReview = (review) => {
-        // update the reviews with new review
-        setReviews(prev => [...prev, review]);
-    }
+const Reviews = () => {
+    const dispatch = useDispatch();
+
+    const reviews = useSelector(state => state.reviews);
+    const reviewList = reviews.slice(0).reverse()
+        .map((review, id) => <UserReview key={id} review={review} />)
+
+    const handleAddReview = (input) => dispatch(addReview(input));
 
     return (
         <section className="reviews">
             <h2>Add a review</h2>
-            <ReviewForm handleAddReview={handleAddReview} /> 
-
+            <ReviewForm handleAddReview={handleAddReview} />
             <h2>Reviews</h2>
-            {/*shallow copy array and reverse to order by date*/}
-            {reviews.slice(0).reverse().map((review, id) => <UserReview key={id} review={review}/>)}
+            {reviewList}
         </section>
     )
 }
