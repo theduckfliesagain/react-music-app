@@ -1,0 +1,16 @@
+.user-review {
+    margin: 1em 0;
+    background-color: rgb(32, 32, 32);
+    padding: 2em;
+    border-radius: 10px;
+}
+
+.user-info span {
+    margin-left: 0.5em;
+    font-size: 0.8em;
+    font-weight: lighter;
+}
+
+.user-review>p {
+    margin: 1em 0;    
+}

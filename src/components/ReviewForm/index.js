@@ -1,36 +1,58 @@
 import React, { useEffect, useState } from 'react';
 import { Reviews } from "../../pages";
 
-
+import './styles.css'
 const ReviewForm = ({ handleAddReview }) => {
-    // controlled text input 
-    const [textInput, setTextInput] = useState("");
-    const [review, setReview] = useState();
 
-    useEffect(() => {
-        // console.log(review);
-    });
-
-    const handleChange = e => { setTextInput(e.target.value) }
+    // const [textInput, setTextInput] = useState("");
+    const [input, setInput] = useState(
+        {
+            name: "",
+            text: ""
+        }
+    );
+    // controlled text input for both inputs
+    const handleChange = e => {
+        setInput(prev => ({
+            ...prev,
+            [e.target.name]: e.target.value
+        }))
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setReview({ text: textInput });
-        setTextInput("");
-        // Add the review
-        handleAddReview(review);
+        let newReview = { 
+            time: Date.now(),
+            name: input.name,
+            text: input.text,
+         }
+        setInput(
+            {
+                name: "",
+                text: ""
+            }
+        );
+        handleAddReview(newReview)
     }
 
- 
     return (
         <form onSubmit={handleSubmit}>
-            <label htmlFor="review-input"></label>
+            <label htmlFor="review-name-input">Your name/alias</label>
+            <input
+                type="text" id="review-name-input" name="name"
+                value={input.name} onChange={handleChange}
+                autoComplete="off" required
+            />
+
+            <label htmlFor="review-text-input">Your review</label>
             <textarea
-                id="review-input" name="review-input"
-                value={textInput} onChange={handleChange}
+                id="review-text-input" name="text"
+                value={input.text} onChange={handleChange}
+                autoComplete="off" required
             >
             </textarea>
-            <input type="submit" value="Post review" />
+
+            <input id="review-submit-btn" type="submit" value="Post review" />
         </form>
     )
 }
