@@ -11,7 +11,7 @@ const Profile = () => {
 
     useEffect(() => {
         const cycleGenre = () => {
-            index < genres.length -1 ? setIndex(index + 1) : setIndex(0);
+            index < genres.length - 1 ? setIndex(index + 1) : setIndex(0);
         }
 
         const cycle = setInterval(cycleGenre, 2000);
@@ -22,17 +22,16 @@ const Profile = () => {
     return (
         <section className="artist-profile">
             <h1>Young Fathers</h1>
-            <h4 className="genres"> 
-            <span >{genres[index]} </span> 
-                {/* {genres.map(genre => (<span key={genre}>{genre} </span> ))} */}
+            <h4 className="genres">
+                <span >{genres[index]} </span>
             </h4>
             <p>
-                Young Fathers is a Scottish band based in Edinburgh, Scotland. 
+                Young Fathers is a Scottish band based in Edinburgh, Scotland.
                 In 2014, they won the Mercury Prize for their album Dead.
             </p>
 
-            <FeaturedSongs />          
-        </section>    
+            <FeaturedSongs />
+        </section>
     )
 }
 
