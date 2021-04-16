@@ -44,7 +44,7 @@ export const LyricsButton = ({ songName }) => {
 
     return (
         <>
-        <span className="lyrics-btn btn" role="switch" onClick={toggleLyrics}>
+        <span className="lyrics-btn icon" role="switch" onClick={toggleLyrics}>
             <i className="fas fa-align-left"></i>
         </span>
 

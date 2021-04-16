@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 
-import "./styles.css"
-
 const FavButton = () => {
     const [faved, setFaved] = useState(false);
 
@@ -11,7 +9,7 @@ const FavButton = () => {
     }
 
     return (
-        <span className="fav-btn btn" role="switch" onClick={handleFav}>
+        <span className="fav-btn icon" role="switch" onClick={handleFav}>
             <i className={`${faved ? 'fas': 'far'} fa-heart`}></i>
         </span>
     )
