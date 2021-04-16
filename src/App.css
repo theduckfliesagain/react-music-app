@@ -68,7 +68,8 @@ h4 {
 
 /* ICON BUTTONS */
 .icon {
-    transition: all 0.2s;
+    display: inline-block;
+    transition: all 0.2s linear;
     cursor: pointer;
     border-radius: 100%;
     padding: 5px;
@@ -77,3 +78,14 @@ h4 {
 .icon:hover {
     transform: scale(1.4);
 }
+
+.rotate {
+    /* transition: all 0.5s; */
+    /* transform: rotate(180deg) */
+    animation: rotate 0.5s;
+}
+
+@keyframes rotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(180deg);}
+  }

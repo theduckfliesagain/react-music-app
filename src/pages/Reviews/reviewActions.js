@@ -17,3 +17,8 @@ export const likeReview = (reviewId) => ({
     payload: reviewId
 })
 
+export const refreshReviews = () => ({ 
+    type: "LOAD_REVIEWS"
+})
+
+
