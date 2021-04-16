@@ -2,17 +2,20 @@ import React from 'react';
 import { ReviewForm, UserReview } from "../../components";
 
 import { useSelector, useDispatch } from 'react-redux';
-import { addReview, deleteReview } from './reviewActions';
+import { addReview, deleteReview, likeReview } from './reviewActions';
 
 const Reviews = () => {
     const dispatch = useDispatch();
 
     const handleAddReview = (input) => dispatch(addReview(input));
+    const handleLikeReview = (id) => dispatch(likeReview(id));
     const handleDeleteReview = (id) => dispatch(deleteReview(id));
 
+    const handlers = [handleLikeReview, handleDeleteReview];
+
     const reviews = useSelector(state => state.reviews);
-    const reviewList = reviews.slice(0).reverse()
-        .map((review) => <UserReview key={review.id} review={review} handleDeleteReview={handleDeleteReview} />)
+    const reviewList = reviews && reviews.slice(0).reverse()
+        .map((review) => <UserReview key={review.id} review={review} handlers={handlers} />)
 
     
     

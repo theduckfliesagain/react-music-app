@@ -12,3 +12,8 @@ export const deleteReview = (reviewId) => ({
     payload: reviewId
 })
 
+export const likeReview = (reviewId) => ({ 
+    type: "LIKE_REVIEW",
+    payload: reviewId
+})
+

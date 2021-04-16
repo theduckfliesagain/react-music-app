@@ -1,9 +1,11 @@
 import React from 'react';
-import { DeleteButton } from '..';
+import {FavButton, DeleteButton } from '..';
 import './styles.css'
 
-const UserReview = ({ review, handleDeleteReview }) => {
+const UserReview = ({ review, handlers }) => {
     const d = new Date(review.time);
+
+    const [handleLikeReview, handleDeleteReview] = handlers;
 
     return (
         <div className="user-review">
@@ -11,6 +13,7 @@ const UserReview = ({ review, handleDeleteReview }) => {
                 {review.name}
                 <span>{d.getDate()}/{d.getMonth()}/{d.getFullYear()}</span>
                 <span className="user-review-btns">
+                    <FavButton handleClick={()=> handleLikeReview(review.id)} />
                     <DeleteButton handleClick={() => handleDeleteReview(review.id)}/>
                 </span>
             </h4>

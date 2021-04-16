@@ -20,7 +20,7 @@ const FeaturedSongs = () => {
                             <span className="song-title">{song.name}</span>
                             <span className="song-plays">{song.plays}</span>
                             <LyricsButton songName={song.name} />
-                            <FavButton />
+                            <FavButton handleClick={()=>{}} />
                         </li>)}
                 </ol>
             </div>
