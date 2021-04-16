@@ -27,6 +27,7 @@ section {
     margin: 2em 0;
 }
 
+/* HEADINGS */
 h1, h2, h3, h4 {
     font-family: 'Bebas Neue', sans-serif;
 }
@@ -49,27 +50,42 @@ h4 {
     font-size: 2em;
 }
 
-/* width */
 
+/* SCROLLBARS */
 ::-webkit-scrollbar {
     width: 5px;
 }
-
-/* Track */
-
 ::-webkit-scrollbar-track {
     background: #ffffff00;
 }
-
-/* Handle */
-
 ::-webkit-scrollbar-thumb {
     border-radius: 50px;
     background: rgb(255, 255, 255);
 }
-
-/* Handle on hover */
-
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
+
+/* ICON BUTTONS */
+.icon {
+    display: inline-block;
+    transition: all 0.2s linear;
+    cursor: pointer;
+    border-radius: 100%;
+    padding: 5px;
+}
+
+.icon:hover {
+    transform: scale(1.4);
+}
+
+.rotate {
+    /* transition: all 0.5s; */
+    /* transform: rotate(180deg) */
+    animation: rotate 0.5s;
+}
+
+@keyframes rotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(180deg);}
+  }

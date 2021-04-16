@@ -1,17 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { Reviews } from "../../pages";
+import React, { useState } from 'react';
 
 import './styles.css'
 const ReviewForm = ({ handleAddReview }) => {
 
-    // const [textInput, setTextInput] = useState("");
     const [input, setInput] = useState(
         {
             name: "",
             text: ""
         }
     );
-    // controlled text input for both inputs
+
     const handleChange = e => {
         setInput(prev => ({
             ...prev,
@@ -20,21 +18,11 @@ const ReviewForm = ({ handleAddReview }) => {
     }
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-        let newReview = { 
-            time: Date.now(),
-            name: input.name,
-            text: input.text,
-         }
-        setInput(
-            {
-                name: "",
-                text: ""
-            }
-        );
-        handleAddReview(newReview)
+        e.preventDefault(); 
+        handleAddReview(input);
+        setInput({name:"", text:""});
     }
-
+  
     return (
         <form onSubmit={handleSubmit}>
             <label htmlFor="review-name-input">Your name/alias</label>
