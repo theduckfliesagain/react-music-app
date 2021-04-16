@@ -1,5 +1,5 @@
 const initState = {
-    reviews: [{ time: Date.now(), name: "YoloBaggins", text: "Nice songs." }]
+    reviews: [{ id:1, time: Date.now(), name: "YoloBaggins", text: "Nice songs." }]
 }
 
 const reviewReducer = (state=initState, action) => {
@@ -9,14 +9,16 @@ const reviewReducer = (state=initState, action) => {
                 reviews: state.reviews
             })
         case 'ADD_REVIEW':
+            const reviewID = state.reviews.length + 1;
             return ({
                 ...state,
-                reviews: [...state.reviews, action.payload]
+                reviews: [...state.reviews, {id: reviewID, ...action.payload}]
             })
         case 'TOGGLE_LIKE_REVIEW':
             return
         case 'DELETE_REVIEW':
-            return
+            const updatedReviews = state.reviews.filter(r => r.id !== action.payload)
+            return {...state, reviews: updatedReviews}
     
         default:
             return state;

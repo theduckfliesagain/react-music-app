@@ -4,11 +4,18 @@
     padding: 2em;
     border-radius: 10px;
 }
-
-.user-info span {
+.user-review {
+    vertical-align: middle;
+}
+.user-info>span {
     margin-left: 0.5em;
     font-size: 0.8em;
     font-weight: lighter;
+    
+}
+
+.user-review-btns{
+    float: right;
 }
 
 .user-review>p {
