@@ -22,7 +22,9 @@ export const Lyrics = ({ songName, close }) => {
         <div className="lyrics-container">
             <div className="lyrics-info">
                 <h3>{songName}
-                <span className="close-btn btn" onClick={close}>x</span>
+                    <span className="close-btn icon" onClick={close}>
+                        <i class="far fa-times-circle"></i>
+                    </span>
                 </h3>
             </div>
             <div className="lyrics">
@@ -44,13 +46,13 @@ export const LyricsButton = ({ songName }) => {
 
     return (
         <>
-        <span className="lyrics-btn icon" role="switch" onClick={toggleLyrics}>
-            <i className="fas fa-align-left"></i>
-        </span>
+            <span className="lyrics-btn icon" role="switch" onClick={toggleLyrics}>
+                <i className="fas fa-align-left"></i>
+            </span>
 
-        {display && <Lyrics songName={songName} close={toggleLyrics}/>}
+            {display && <Lyrics songName={songName} close={toggleLyrics} />}
         </>
-        
+
     )
 }
 
