@@ -6,6 +6,7 @@ nav {
 
 nav>button {
     width: 100px;
+    margin: 0 20px;
     border: none;
     outline: none;
     background-color: none;
