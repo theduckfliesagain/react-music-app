@@ -16,6 +16,7 @@
 }
 
 .lyrics-container.active {
+    transition: all 0.2s;
     transform: scale(1);
 }
 
@@ -28,6 +29,7 @@
 .lyrics-box {
     transition: all 0.2s;
     pointer-events: all;
+    overflow-x: hidden;
     overflow-y: scroll;
     max-height: 80vh;
     min-height: 40vh;
