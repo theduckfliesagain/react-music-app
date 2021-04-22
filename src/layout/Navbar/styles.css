@@ -6,11 +6,12 @@ nav {
 
 nav>button {
     width: 100px;
+    margin: 0 20px;
     border: none;
     outline: none;
-    background-color: none;
+    background-color: inherit;
     cursor: pointer;
-    background-color: black;
+    /* background-color: black; */
     color: white;
 }
 
