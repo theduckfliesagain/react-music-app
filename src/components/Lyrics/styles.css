@@ -1,11 +1,38 @@
 .lyrics-container {
     transition: all 0.2s;
     /* margin: 10vh auto; */
-    position: absolute;
-    top: 10vh;
+    overflow-y: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    /* top: 10vh; */
+    
+}
+
+.lyrics-container.active {
+    transform: scale(1);
+}
+
+
+.lyrics-container.inactive {
+    transition: all 0.2s;
+    transform: scale(0);
+}
+
+.lyrics-box {
+    transition: all 0.2s;
+    pointer-events: all;
     overflow-y: scroll;
     max-height: 80vh;
-    padding: 10em;
+    min-height: 40vh;
+    min-width: 40vw;
+    padding: 4vw;
     border-radius: 20px;
     background-color: rgba(10, 10, 10, 0.918);
     color: white;
@@ -17,6 +44,12 @@
     line-height: 1em;
 }
 
-.close-btn {
+.lyrics-info {
+    vertical-align: middle;
+    margin-bottom: 20px;
+}
+
+.close-btn, .bottom-btn {
     float: right;
+    font-size: 25px;
 }
