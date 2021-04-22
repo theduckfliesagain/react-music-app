@@ -1,9 +1,11 @@
 import React from 'react';
-
+import { useTheme } from "../../context/ThemeContext";
 import { LyricsButton, FavButton } from "..";
 import './styles.css'
 
 const FeaturedSongs = () => {
+    const theme = useTheme();
+
     const topSongs = [
         { name: "Shame", plays: "9m" },
         { name: "Only God Knows", plays: "4m" },
@@ -16,7 +18,7 @@ const FeaturedSongs = () => {
             <div className="songs">
                 <ol>
                     {topSongs.map((song, index) =>
-                        <li key={index}>
+                        <li key={index} style={{background: theme.current.bgSecondary, color: theme.current.foreground}}>
                             <span className="song-title">{song.name}</span>
                             <span className="song-plays">{song.plays}</span>
                             <LyricsButton songName={song.name} />
