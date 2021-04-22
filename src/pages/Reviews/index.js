@@ -14,7 +14,7 @@ const Reviews = () => {
 
     const handlers = [handleLikeReview, handleDeleteReview];
 
-    const reviews = useSelector(state => state.reviews);
+    const reviews = useSelector(state => state.reviews.reviews);
     const reviewList = reviews && reviews.slice(0).reverse()
         .map((review) => <UserReview key={review.id} review={review} handlers={handlers} />)
 

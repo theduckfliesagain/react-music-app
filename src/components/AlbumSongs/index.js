@@ -7,7 +7,7 @@ const AlbumSongs = ({ album }) => {
     const songs = album.songs
         ? album.songs.map(song => {
             return <li key={song.id}>
-                <span className="song-num">{song.id}</span>
+                <span className="song-num">{song.number}</span>
                 <span className="song-title">{song.title}</span>
                 <span className="song-length">{song.length}</span>
             </li>

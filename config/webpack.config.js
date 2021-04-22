@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 const ROOT_DIRECTORY = path.join(__dirname, '../');
 const PUBLIC_DIRECTORY = path.join(ROOT_DIRECTORY, 'public');
@@ -13,10 +14,13 @@ const config = {
     filename: 'bundle.js',
     publicPath: '/',
   },
-  mode: 'development', 
+  mode: 'development',
   resolve: {
     // modules: [path.resolve('node_modules'), 'node_modules'], 
-    modules: ['node_modules'], 
+    modules: ['node_modules'],
+    fallback: {
+      fs: false
+    }
   },
   performance: {
     hints: false,
@@ -25,6 +29,7 @@ const config = {
     new HtmlWebpackPlugin({
       template: path.join(PUBLIC_DIRECTORY, 'index.html'),
     }),
+    new Dotenv()
   ],
   module: {
     rules: [
